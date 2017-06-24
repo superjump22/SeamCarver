@@ -12,6 +12,7 @@
 		A22F1D021EFEE18B00654A95 /* EnergyCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A22F1D001EFEE18B00654A95 /* EnergyCalculator.cpp */; };
 		A22F1D051EFEE1BC00654A95 /* Pixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A22F1D031EFEE1BC00654A95 /* Pixel.cpp */; };
 		A22F1D081EFEE30500654A95 /* SeamCarver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A22F1D061EFEE30500654A95 /* SeamCarver.cpp */; };
+		A22F1D0B1EFEFE7400654A95 /* Heap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A22F1D091EFEFE7400654A95 /* Heap.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,8 @@
 		A22F1D041EFEE1BC00654A95 /* Pixel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Pixel.hpp; sourceTree = "<group>"; };
 		A22F1D061EFEE30500654A95 /* SeamCarver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SeamCarver.cpp; sourceTree = "<group>"; };
 		A22F1D071EFEE30500654A95 /* SeamCarver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SeamCarver.hpp; sourceTree = "<group>"; };
+		A22F1D091EFEFE7400654A95 /* Heap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Heap.cpp; sourceTree = "<group>"; };
+		A22F1D0A1EFEFE7400654A95 /* Heap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Heap.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				A22F1CFA1EFEDD1000654A95 /* ImageIO.cpp */,
 				A22F1D011EFEE18B00654A95 /* EnergyCalculator.hpp */,
 				A22F1D001EFEE18B00654A95 /* EnergyCalculator.cpp */,
+				A22F1D0A1EFEFE7400654A95 /* Heap.hpp */,
+				A22F1D091EFEFE7400654A95 /* Heap.cpp */,
 				A22F1D071EFEE30500654A95 /* SeamCarver.hpp */,
 				A22F1D061EFEE30500654A95 /* SeamCarver.cpp */,
 				A22F1CF61EFED8E400654A95 /* CImg */,
@@ -156,6 +161,7 @@
 				A22F1D051EFEE1BC00654A95 /* Pixel.cpp in Sources */,
 				A22F1CF51EFED8DE00654A95 /* main.cpp in Sources */,
 				A22F1D021EFEE18B00654A95 /* EnergyCalculator.cpp in Sources */,
+				A22F1D0B1EFEFE7400654A95 /* Heap.cpp in Sources */,
 				A22F1D081EFEE30500654A95 /* SeamCarver.cpp in Sources */,
 				A22F1CFC1EFEDD1000654A95 /* ImageIO.cpp in Sources */,
 			);

@@ -25,4 +25,11 @@ public:
 	uint8_t operator[](int index) const;
 };
 
+inline int distance2(const Pixel &pixel1, const Pixel &pixel2) {
+	int result = (pixel1.r - pixel2.r) * (pixel1.r - pixel2.r);
+	result += (pixel1.g - pixel2.g) * (pixel1.g - pixel2.g);
+	result += (pixel1.b - pixel2.b) * (pixel1.b - pixel2.b);
+	return result;
+}
+
 #endif /* Pixel_hpp */

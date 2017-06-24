@@ -21,8 +21,13 @@ protected:
 	string file_name;
 	EnergyCalculator *calculator;
 	vector<vector<Pixel>> pixels;
-	vector<int> findHorizontalSeam(int num = 1);
-	vector<int> findVerticalSeam(int num = 1);
+	vector<vector<int>> seams;
+	int origin_width;
+	int origin_height;
+	vector<int> findHorizontalSeam();
+	vector<int> findVerticalSeam();
+	vector<vector<int>> findHorizontalSeam(int num);
+	vector<vector<int>> findVerticalSeam(int num);
 	void removeHorizontalSeam(vector<int> seam);
 	void removeVerticalSeam(vector<int> seam);
 	void insertHorizontalSeam(vector<int> seam);

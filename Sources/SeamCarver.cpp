@@ -17,3 +17,15 @@ void SeamCarver::setInputImage(const string &file_name) {
 void SeamCarver::setEnergyCalculator(EnergyCalculator *calculator) {
 	this->calculator = calculator;
 }
+
+void SeamCarver::resize(int new_width, int new_height) {
+	if (new_width >= origin_width && new_height >= origin_height) {
+		
+	} else if (new_width >= origin_width && new_height < origin_height) {
+		
+	} else if (new_width < origin_width && new_height >= origin_height) {
+		
+	} else {
+		
+	}
+}
