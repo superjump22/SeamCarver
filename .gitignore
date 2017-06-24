@@ -1,3 +1,11 @@
+/Sources/SeamCarver
+
+# Xcode Projects
+/Projects/build/*
+
+# macOS
+*.DS_Store
+
 # Prerequisites
 *.d
 
