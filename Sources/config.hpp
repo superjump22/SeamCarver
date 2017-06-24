@@ -14,10 +14,10 @@
 using std::string;
 
 #ifdef XCODE
-const string INPUTS_DIRECTORY = "../../../Images/";
+const string INPUTS_DIRECTORY = "../../../Inputs/";
 const string OUTPUTS_DIRECTORY = "../../../Outputs/";
 #else
-const string INPUTS_DIRECTORY = "../Images/";
+const string INPUTS_DIRECTORY = "../Inputs/";
 const string OUTPUTS_DIRECTORY = "../Outputs/";
 #endif
 

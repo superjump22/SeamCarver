@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A22F1CF51EFED8DE00654A95 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A22F1CF41EFED8DE00654A95 /* main.cpp */; };
+		A22F1CFC1EFEDD1000654A95 /* ImageIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A22F1CFA1EFEDD1000654A95 /* ImageIO.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,8 @@
 		A22F1CF31EFED8DE00654A95 /* CImg.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CImg.hpp; sourceTree = "<group>"; };
 		A22F1CF41EFED8DE00654A95 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A22F1CF81EFEDC0900654A95 /* config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = config.hpp; sourceTree = "<group>"; };
+		A22F1CFA1EFEDD1000654A95 /* ImageIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageIO.cpp; sourceTree = "<group>"; };
+		A22F1CFB1EFEDD1000654A95 /* ImageIO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ImageIO.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 			children = (
 				A22F1CF41EFED8DE00654A95 /* main.cpp */,
 				A22F1CF81EFEDC0900654A95 /* config.hpp */,
+				A22F1CFB1EFEDD1000654A95 /* ImageIO.hpp */,
+				A22F1CFA1EFEDD1000654A95 /* ImageIO.cpp */,
 				A22F1CF61EFED8E400654A95 /* CImg */,
 			);
 			name = SeamCarver;
@@ -134,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A22F1CF51EFED8DE00654A95 /* main.cpp in Sources */,
+				A22F1CFC1EFEDD1000654A95 /* ImageIO.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
