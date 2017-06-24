@@ -16,12 +16,12 @@ using std::vector;
 
 class EnergyCalculator {
 public:
-	virtual void calculateEnergy(vector<vector<int>> &energy_matrix, const vector<vector<Pixel>> &pixels) const = 0;
+	virtual vector<vector<int>> calculateEnergy(const vector<vector<Pixel>> &pixels, int width, int height) const = 0;
 };
 
 class GradientCalculator: public EnergyCalculator {
 public:
-	virtual void calculateEnergy(vector<vector<int>> &energy_matrix, const vector<vector<Pixel>> &pixels) const;
+	virtual vector<vector<int>> calculateEnergy(const vector<vector<Pixel>> &pixels, int width, int height) const;
 };
 
 #endif /* EnergyCalculator_hpp */

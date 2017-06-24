@@ -32,4 +32,10 @@ inline int distance2(const Pixel &pixel1, const Pixel &pixel2) {
 	return result;
 }
 
+inline Pixel operator+(const Pixel &pixel1, const Pixel &pixel2) {
+	return Pixel((pixel1.r + pixel2.r) / 2,
+				 (pixel1.g + pixel2.g) / 2,
+				 (pixel1.b + pixel2.b) / 2);
+}
+
 #endif /* Pixel_hpp */

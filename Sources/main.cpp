@@ -7,12 +7,14 @@
 //
 
 #include <iostream>
-#include "ImageIO.hpp"
+#include "SeamCarver.hpp"
 
 int main(int argc, const char * argv[]) {
-	ImageIO *io = new ImageIO;
-	vector<vector<Pixel>> pixels;
-	io->importImage(pixels, "1.jpg");
-	io->exportImage(pixels, "1.png");
+	SeamCarver *carver = new SeamCarver;
+	carver->setInputImage("1", jpg);
+	carver->setEnergyCalculator(new GradientCalculator);
+	carver->importImage();
+	carver->narrowWidth(400);
+	carver->narrowHeight(200);
 	return 0;
 }

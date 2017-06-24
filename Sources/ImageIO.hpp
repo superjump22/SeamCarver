@@ -23,10 +23,14 @@ using std::string;
 using std::vector;
 using namespace cimg_library;
 
+enum ImageFormat {
+	jpg, png
+};
+
 class ImageIO {
 public:
-	void importImage(vector<vector<Pixel>> &pixels, const string &fileName) const;
-	void exportImage(const vector<vector<Pixel>> &pixels, const string &fileName) const;
+	void importImage(vector<vector<Pixel>> &pixels, const string &file_name, ImageFormat format) const;
+	void exportImage(const vector<vector<Pixel>> &pixels, int width, int height, const string &file_name, ImageFormat format) const;
 };
 
 #endif /* ImageIO_hpp */

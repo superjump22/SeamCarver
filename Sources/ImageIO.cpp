@@ -8,8 +8,17 @@
 
 #include "ImageIO.hpp"
 
-void ImageIO::importImage(vector<vector<Pixel>> &pixels, const string &fileName) const {
-	CImg<uint8_t> image((INPUTS_DIRECTORY + fileName).c_str());
+void ImageIO::importImage(vector<vector<Pixel>> &pixels, const string &file_name, ImageFormat format) const {
+	string file_full_name = INPUTS_DIRECTORY + file_name;
+	switch (format) {
+		case jpg:
+			file_full_name += ".jpg";
+			break;
+		case png:
+			file_full_name += ".png";
+			break;
+	}
+	CImg<uint8_t> image(file_full_name.c_str());
 	int width = image.width();
 	int height = image.height();
 	pixels = vector<vector<Pixel>>(height);
@@ -24,9 +33,7 @@ void ImageIO::importImage(vector<vector<Pixel>> &pixels, const string &fileName)
 	}
 }
 
-void ImageIO::exportImage(const vector<vector<Pixel>> &pixels, const string &fileName) const {
-	unsigned int width = static_cast<unsigned int>(pixels[0].size());
-	unsigned int height = static_cast<unsigned int>(pixels.size());
+void ImageIO::exportImage(const vector<vector<Pixel>> &pixels, int width, int height, const string &file_name, ImageFormat format) const {
 	CImg<uint8_t> image(width, height, 1, 3);
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
@@ -36,5 +43,14 @@ void ImageIO::exportImage(const vector<vector<Pixel>> &pixels, const string &fil
 			image.atXYZC(j, i, 0, 2) = pixel.b;
 		}
 	}
-	image.save((OUTPUTS_DIRECTORY + fileName).c_str());
+	string file_full_name = OUTPUTS_DIRECTORY + file_name;
+	switch (format) {
+		case jpg:
+			file_full_name += ".jpg";
+			break;
+		case png:
+			file_full_name += ".png";
+			break;
+	}
+	image.save(file_full_name.c_str());
 }

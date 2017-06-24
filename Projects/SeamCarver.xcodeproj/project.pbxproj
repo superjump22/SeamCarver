@@ -83,10 +83,10 @@
 				A22F1CFA1EFEDD1000654A95 /* ImageIO.cpp */,
 				A22F1D011EFEE18B00654A95 /* EnergyCalculator.hpp */,
 				A22F1D001EFEE18B00654A95 /* EnergyCalculator.cpp */,
-				A22F1D0A1EFEFE7400654A95 /* Heap.hpp */,
-				A22F1D091EFEFE7400654A95 /* Heap.cpp */,
 				A22F1D071EFEE30500654A95 /* SeamCarver.hpp */,
 				A22F1D061EFEE30500654A95 /* SeamCarver.cpp */,
+				A22F1D0A1EFEFE7400654A95 /* Heap.hpp */,
+				A22F1D091EFEFE7400654A95 /* Heap.cpp */,
 				A22F1CF61EFED8E400654A95 /* CImg */,
 			);
 			name = SeamCarver;
