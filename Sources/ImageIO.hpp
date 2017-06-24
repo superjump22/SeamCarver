@@ -16,25 +16,12 @@
 #include <string>
 #include <vector>
 #include "config.hpp"
+#include "Pixel.hpp"
 #include "CImg.hpp"
 
 using std::string;
 using std::vector;
 using namespace cimg_library;
-
-class Pixel {
-private:
-	uint8_t elem[3];
-public:
-	uint8_t &r = elem[0];
-	uint8_t &g = elem[1];
-	uint8_t &b = elem[2];
-	Pixel(uint8_t r = 0, uint8_t g = 0, uint8_t b = 0);
-	Pixel(const Pixel &pixel);
-	Pixel &operator=(const Pixel &pixel);
-	uint8_t &operator[](int index);
-	uint8_t operator[](int index) const;
-};
 
 class ImageIO {
 public:

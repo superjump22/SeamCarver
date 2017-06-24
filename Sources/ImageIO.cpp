@@ -8,27 +8,6 @@
 
 #include "ImageIO.hpp"
 
-Pixel::Pixel(uint8_t r, uint8_t g, uint8_t b): elem{r, g, b} {}
-
-Pixel::Pixel(const Pixel &pixel) {
-	*this = pixel;
-}
-
-Pixel &Pixel::operator=(const Pixel &pixel) {
-	r = pixel.r;
-	g = pixel.g;
-	b = pixel.b;
-	return *this;
-}
-
-uint8_t &Pixel::operator[](int index) {
-	return elem[index];
-}
-
-uint8_t Pixel::operator[](int index) const {
-	return elem[index];
-}
-
 void ImageIO::importImage(vector<vector<Pixel>> &pixels, const string &fileName) const {
 	CImg<uint8_t> image((INPUTS_DIRECTORY + fileName).c_str());
 	int width = image.width();
