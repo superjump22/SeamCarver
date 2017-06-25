@@ -16,12 +16,22 @@ using std::vector;
 
 class EnergyCalculator {
 public:
-	virtual vector<vector<int>> calculateEnergy(const vector<vector<Pixel>> &pixels, int width, int height) const = 0;
+	virtual vector<vector<double>> calculateEnergy(const vector<vector<Pixel>> &pixels, int width, int height) const = 0;
 };
 
 class GradientCalculator: public EnergyCalculator {
 public:
-	virtual vector<vector<int>> calculateEnergy(const vector<vector<Pixel>> &pixels, int width, int height) const;
+	virtual vector<vector<double>> calculateEnergy(const vector<vector<Pixel>> &pixels, int width, int height) const;
+};
+
+class SobelCalculator: public EnergyCalculator {
+public:
+	virtual vector<vector<double>> calculateEnergy(const vector<vector<Pixel>> &pixels, int width, int height) const;
+};
+
+class RobertsCrossCalculator: public EnergyCalculator {
+public:
+	virtual vector<vector<double>> calculateEnergy(const vector<vector<Pixel>> &pixels, int width, int height) const;
 };
 
 #endif /* EnergyCalculator_hpp */

@@ -30,7 +30,7 @@ protected:
 	vector<vector<Pixel>> pixels;
 	int width;
 	int height;
-	vector<vector<int>> energy;
+	vector<vector<double>> energy;
 	vector<vector<int>> horizontal_seams;
 	vector<vector<int>> vertical_seams;
 protected:
@@ -49,11 +49,8 @@ public:
 	void importImage();
 	void narrowWidth(int cols_num);
 	void narrowHeight(int rows_num);
-//	void narrow(int rows_num, int cols_num);
 	void enlargeWidth(int cols_num);
 	void enlargeHeight(int rows_num);
-//	void enlarge(int rows_num, int cols_num);
-	void test(int num);
 };
 
 inline bool compare(const vector<int> &v1, const vector<int> &v2) {

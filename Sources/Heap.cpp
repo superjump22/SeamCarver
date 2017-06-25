@@ -104,7 +104,7 @@ int Heap::deleteElem(int index) {
 	return result;
 }
 
-void Heap::insert(int key, int value)
+void Heap::insert(double key, int value)
 {
 	int index = size++;
 	int temp = index;

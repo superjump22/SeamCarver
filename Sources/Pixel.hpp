@@ -23,13 +23,11 @@ public:
 	Pixel &operator=(const Pixel &pixel);
 	uint8_t &operator[](int index);
 	uint8_t operator[](int index) const;
+	double toGray() const;
 };
 
-inline int distance2(const Pixel &pixel1, const Pixel &pixel2) {
-	int result = (pixel1.r - pixel2.r) * (pixel1.r - pixel2.r);
-	result += (pixel1.g - pixel2.g) * (pixel1.g - pixel2.g);
-	result += (pixel1.b - pixel2.b) * (pixel1.b - pixel2.b);
-	return result;
+inline double Pixel::toGray() const {
+	return (0.2989 * r + 0.5870 * g + 0.1140 * b) * 0.003921568627;
 }
 
 inline Pixel operator+(const Pixel &pixel1, const Pixel &pixel2) {

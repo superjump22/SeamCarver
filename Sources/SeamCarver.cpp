@@ -266,7 +266,3 @@ void SeamCarver::enlargeHeight(int rows_num) {
 	width = origin_width;
 	height = origin_height;
 }
-
-void SeamCarver::test(int num) {
-
-}

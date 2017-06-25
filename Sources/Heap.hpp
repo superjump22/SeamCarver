@@ -14,7 +14,7 @@
 using std::vector;
 
 struct Pair {
-	int key;
+	double key;
 	int value;
 };
 
@@ -28,7 +28,7 @@ private:
 	int deleteElem(int index);
 public:
 	Heap(int size);
-	void insert(int key, int value);
+	void insert(double key, int value);
 	int max() const;
 	int min() const;
 	int extractMax();
