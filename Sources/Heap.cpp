@@ -8,7 +8,7 @@
 
 #include "Heap.hpp"
 
-Heap::Heap(int size): size(2), elem(vector<int>(size + 2)) {}
+Heap::Heap(int size): size(2), elem(vector<Pair>(size + 2)) {}
 
 int Heap::adjustSibling(int index) {
 	if ((index | 1) >= size)
@@ -17,16 +17,16 @@ int Heap::adjustSibling(int index) {
 	if (index & 1)
 	{
 		sibling = index - 1;
-		if (elem[index] >= elem[sibling])
+		if (elem[index].key >= elem[sibling].key)
 			return index;
 	}
 	else
 	{
 		sibling = index + 1;
-		if (elem[index] <= elem[sibling])
+		if (elem[index].key <= elem[sibling].key)
 			return index;
 	}
-	int temp = elem[index];
+	Pair temp = elem[index];
 	elem[index] = elem[sibling];
 	elem[sibling] = temp;
 	return sibling;
@@ -38,16 +38,16 @@ int Heap::adjustUncle(int index) {
 	int grandpa = index >> 2;
 	int left_uncle = grandpa << 1;
 	int right_uncle = left_uncle | 1;
-	if (elem[left_uncle] > elem[index])
+	if (elem[left_uncle].key > elem[index].key)
 	{
-		int temp = elem[index];
+		Pair temp = elem[index];
 		elem[index] = elem[left_uncle];
 		elem[left_uncle] = temp;
 		return left_uncle;
 	}
-	if (elem[right_uncle] < elem[index])
+	if (elem[right_uncle].key < elem[index].key)
 	{
-		int temp = elem[index];
+		Pair temp = elem[index];
 		elem[index] = elem[right_uncle];
 		elem[right_uncle] = temp;
 		return right_uncle;
@@ -64,9 +64,9 @@ int Heap::adjustChild(int index) {
 			return index;
 		child = index << 1 | 1;
 		temp = nephew;
-		if (child < size && elem[nephew] < elem[child])
+		if (child < size && elem[nephew].key < elem[child].key)
 			temp = child;
-		if (elem[temp] <= elem[index])
+		if (elem[temp].key <= elem[index].key)
 			return index;
 	}
 	else
@@ -76,12 +76,12 @@ int Heap::adjustChild(int index) {
 			return index;
 		nephew = (index + 1) << 1;
 		temp = child;
-		if (nephew < size && elem[nephew] < elem[child])
+		if (nephew < size && elem[nephew].key < elem[child].key)
 			temp = nephew;
-		if (elem[temp] >= elem[index])
+		if (elem[temp].key >= elem[index].key)
 			return index;
 	}
-	int temp1 = elem[index];
+	Pair temp1 = elem[index];
 	elem[index] = elem[temp];
 	elem[temp] = temp1;
 	return temp;
@@ -91,8 +91,8 @@ int Heap::deleteElem(int index) {
 	if (size <= 2)
 		return 0;
 	if (size == 3 || (size == 4 && index == 3))
-		return elem[--size];
-	int result = elem[index];
+		return elem[--size].value;
+	int result = elem[index].value;
 	elem[index] = elem[--size];
 	int temp;
 	do
@@ -104,11 +104,11 @@ int Heap::deleteElem(int index) {
 	return result;
 }
 
-void Heap::insert(int value)
+void Heap::insert(int key, int value)
 {
 	int index = size++;
 	int temp = index;
-	elem[index] = value;
+	elem[index] = {key, value};
 	do
 	{
 		index = adjustSibling(temp);
@@ -117,11 +117,11 @@ void Heap::insert(int value)
 }
 
 int Heap::max() const {
-	return elem[3];
+	return elem[3].value;
 }
 
 int Heap::min() const {
-	return elem[2];
+	return elem[2].value;
 }
 
 int Heap::extractMax()

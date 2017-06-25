@@ -9,10 +9,12 @@
 #ifndef SeamCarver_hpp
 #define SeamCarver_hpp
 
+#include <algorithm>
 #include <string>
 #include <vector>
 #include "EnergyCalculator.hpp"
 #include "ImageIO.hpp"
+#include "Heap.hpp"
 
 using std::string;
 using std::vector;
@@ -32,15 +34,13 @@ protected:
 	vector<vector<int>> horizontal_seams;
 	vector<vector<int>> vertical_seams;
 protected:
-	vector<int> findHorizontalSeam();
-	vector<int> findVerticalSeam();
-//	vector<vector<int>> findHorizontalSeam(int num);
-//	vector<vector<int>> findVerticalSeam(int num);
+	void calculateEnergy();
+	void findHorizontalSeam();
+	void findVerticalSeam();
+	void findHorizontalSeam(int num);
+	void findVerticalSeam(int num);
 	void removeHorizontalSeam(vector<int> seam);
 	void removeVerticalSeam(vector<int> seam);
-//	void insertHorizontalSeam(vector<int> seam);
-//	void insertVerticalSeam(vector<int> seam);
-
 public:
 	SeamCarver();
 	SeamCarver(const string &file_name, ImageFormat format, EnergyCalculator *calculator);
@@ -49,10 +49,15 @@ public:
 	void importImage();
 	void narrowWidth(int cols_num);
 	void narrowHeight(int rows_num);
-	void narrow(int rows_num, int cols_num);
+//	void narrow(int rows_num, int cols_num);
 	void enlargeWidth(int cols_num);
 	void enlargeHeight(int rows_num);
-	void enlarge(int rows_num, int cols_num);
+//	void enlarge(int rows_num, int cols_num);
+	void test(int num);
 };
+
+inline bool compare(const vector<int> &v1, const vector<int> &v2) {
+	return v1[0] < v2[0];
+}
 
 #endif /* SeamCarver_hpp */

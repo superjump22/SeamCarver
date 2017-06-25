@@ -13,17 +13,22 @@
 
 using std::vector;
 
+struct Pair {
+	int key;
+	int value;
+};
+
 class Heap {
 private:
 	int size;
-	vector<int> elem;
+	vector<Pair> elem;
 	int adjustSibling(int index);
 	int adjustUncle(int index);
 	int adjustChild(int index);
 	int deleteElem(int index);
 public:
 	Heap(int size);
-	void insert(int value);
+	void insert(int key, int value);
 	int max() const;
 	int min() const;
 	int extractMax();

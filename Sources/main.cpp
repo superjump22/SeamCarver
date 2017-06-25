@@ -14,7 +14,9 @@ int main(int argc, const char * argv[]) {
 	carver->setInputImage("1", jpg);
 	carver->setEnergyCalculator(new GradientCalculator);
 	carver->importImage();
-	carver->narrowWidth(400);
+	carver->narrowWidth(200);
 	carver->narrowHeight(200);
+	carver->enlargeWidth(200);
+	carver->enlargeHeight(200);
 	return 0;
 }
